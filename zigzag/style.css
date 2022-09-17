@@ -1,0 +1,173 @@
+:root {
+  font-family: "Montserrat", sans-serif;
+  --main-color: #673399;
+  --sub-color: #bd8fe8;
+  --point-color: #ff4500;
+  --white-color: white;
+  /*
+	font-weight: 500;
+	font-weight: 700;
+	*/
+}
+
+/* Reset */
+body,
+h1,
+h2,
+ul,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+li {
+  list-style: none;
+}
+
+/* Design */
+
+body {
+  background-color: var(--main-color);
+}
+
+.wrapper {
+  max-width: 1080px;
+  margin: 100px auto;
+}
+
+.project-header {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.project-header__title {
+  width: 26%;
+  font-size: 40px;
+  color: var(--white-color);
+}
+
+.background-color {
+  position: relative;
+  z-index: 0;
+}
+
+.background-color::after {
+  content: " ";
+  background-color: var(--point-color);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 40%;
+  width: 100%;
+  z-index: -1;
+}
+
+.project-header__txt {
+  font-size: 14px;
+  color: var(--sub-color);
+  line-height: 1.7em;
+  display: flex;
+  align-items: center;
+}
+
+.project-header__txt::before {
+  content: " ";
+  display: block;
+  width: 85px;
+  height: 3px;
+  background-color: var(--sub-color);
+  margin-right: 25px;
+}
+
+.project-contents {
+  display: flex;
+  flex-direction: column;
+}
+
+.contents-column {
+  display: flex;
+}
+
+.contents-column + .contents-column {
+  margin-top: 24px;
+}
+
+.contents-img {
+  background-position: center;
+  background-size: cover;
+  width: 26%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.contents-img::before {
+  content: " ";
+  position: absolute;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+.rest-img::before {
+  background-image: url(images/photo01.png);
+}
+
+.craft-img::before {
+  background-image: url(images/photo02.png);
+}
+
+.scrap-img::before {
+  background-image: url(images/photo03.png);
+}
+
+.contents-img span {
+  color: var(--white-color);
+  font-size: 30px;
+}
+
+.contents-txt {
+  padding: 24px;
+  background-color: var(--white-color);
+  width: 74%;
+}
+
+.contents-txt h2 {
+  font-size: 18px;
+  color: var(--main-color);
+  font-weight: 600;
+  margin-bottom: 32px;
+}
+
+.contents-txt ul li + li {
+  padding-top: 10px;
+}
+
+.contents-txt ul {
+  font-size: 14px;
+}
+
+.contents-txt ul li::before {
+  content: " ";
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--sub-color);
+  margin-right: 10px;
+}
+
+/* 짝수 section마다 이미지가 오른쪽으로 위치할 수 있도록 */
+.contents-column:nth-child(even) {
+  flex-direction: row-reverse;
+}
