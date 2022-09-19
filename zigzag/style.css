@@ -78,13 +78,15 @@ body {
 
 .project-header__txt::before {
   content: " ";
-  display: block;
   width: 85px;
   height: 3px;
   background-color: var(--sub-color);
   margin-right: 25px;
 }
 
+/* section이 block 레벨 요소이므로 메인에 flex, column 값을 주지 않아도
+변화 없음, 그래도 적용하면 좋지 않을까(?)라는 생각에 삭제하지 않았지만
+삭제하는 게 좋은 것인지? */
 .project-contents {
   display: flex;
   flex-direction: column;
@@ -99,8 +101,6 @@ body {
 }
 
 .contents-img {
-  background-position: center;
-  background-size: cover;
   width: 26%;
   display: flex;
   justify-content: center;
@@ -139,7 +139,9 @@ body {
 .contents-txt {
   padding: 24px;
   background-color: var(--white-color);
-  width: 74%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .contents-txt h2 {
